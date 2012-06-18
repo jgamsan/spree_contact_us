@@ -16,7 +16,7 @@
 <%= form_for @contact, :url => contacts_path do |f| %>
   <% if SpreeContactUs.require_name %>
     <p>
-      <%= f.label :name %>
+      <%= f.label t('.name') %>
       <span class="required">*</span><br/>
       <%= f.text_field :name %>
     </p>
@@ -28,7 +28,7 @@
   </p>
   <% if SpreeContactUs.require_subject %>
     <p>
-      <%= f.label :subject %>
+      <%= f.label t('.subject') %>
       <span class="required">*</span><br/>
       <%= f.text_field :subject %>
     </p>
