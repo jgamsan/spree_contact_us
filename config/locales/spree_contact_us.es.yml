@@ -1,0 +1,18 @@
+es:
+  spree:
+    contact_us:
+      contact_mailer:
+        contact_email:
+          sent_by_contact_form: "Enviado por formulario de contacto desde %{email}"
+          sent_by_name: "Enviado por %{name} desde %{email}"
+          subject: "Mensaje de Contacto con nosotros desde %{email}"
+      contacts:
+        new:
+          contact_us: "Contacto"
+          email: "Email"
+          message: "Mensaje"
+          name: "Nombre"
+          subject: "Asunto"
+          submit: "Enviar"
+      notices:
+        success: "Email de contacto enviado satisfactoriamente."
