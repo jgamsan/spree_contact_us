@@ -1,32 +1,36 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @contact } %>
 
 <h1><%= t('.contact_us') %></h1>
-<%= form_for @contact, :url => contacts_path do |f| %>
+<%= form_for @contact, :url => contacts_path, :class => "form-horizontal" do |f| %>
   <% if SpreeContactUs.require_name %>
-    <p>
-      <%= f.label t('.name') %>
-      <span class="required">*</span><br/>
-      <%= f.text_field :name %>
-    </p>
+    <div class="control-group">
+      <label class="control-label" for="inputName"><%= f.label t('.name') %></label>
+      <div class="controls">
+        <%= f.text_field :name, :placeholder => t('.name') %>
+      </div>
+    </div>
   <% end %>
-  <p>
-    <%= f.label t('.email') %>
-    <span class="required">*</span><br/>
-    <%= f.email_field :email %>
-  </p>
+  <div class="control-group">
+    <label class="control-label" for="inputEmail"><%= f.label t('.email') %></label>
+    <div class="controls">
+      <%= f.email_field :email, :placeholder => t('.email') %>
+    </div>
+  </div>
   <% if SpreeContactUs.require_subject %>
-    <p>
-      <%= f.label t('.subject') %>
-      <span class="required">*</span><br/>
-      <%= f.text_field :subject %>
-    </p>
+    <div class="control-group">
+      <label class="control-label" for="inputSubject"><%= f.label t('.subject') %></label>
+      <div class="controls">
+        <%= f.text_field :subject, :placeholder => t('.subject') %>
+      </div>
+    </div>
   <% end %>
-  <p>
-    <%= f.label t('.message') %>
-    <span class="required">*</span><br/>
-    <%= f.text_area :message %>
-  </p>
-  <p>
+  <div class="control-group">
+    <label class="control-label" for="inputSubject"><%= f.label t('.message') %></label>
+    <div class="controls">
+      <%= f.text_area :message, :rows => "3" %>
+    </div>
+  </div>
+  <div class="form-actions">
     <%= f.submit t('.submit'), :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit'), :class => "btn btn-primary" %>
-  </p>
+  </div>
 <% end %>
