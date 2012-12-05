@@ -1,5 +1,5 @@
 class Spree::ContactUs::ContactsController < Spree::BaseController
-
+  layout "contenido"
   def create
     @contact = Spree::ContactUs::Contact.new(params[:contact_us_contact])
 
